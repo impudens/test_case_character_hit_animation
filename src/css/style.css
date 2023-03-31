@@ -1,17 +1,16 @@
 .arena {
-    height: 500px;
-    width: 700px;
+    height: 667px;
+    width: 375px;
     background-color: green;
     border-radius: 10px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
-    padding: 50px;
 }
 
 .hero {
-    height: 200px;
+    height: 150px;
     width: 150px;
     border-radius: 30%;
     display: flex;
@@ -22,7 +21,7 @@
 
 .hit-marker {
     opacity: 0;
-    top: -150px;
+    top: -110px;
     position: relative;
 }
 
@@ -38,7 +37,7 @@
 .ghost:hover~.spider-man .spider-man-image {
     animation-name: death;
     animation-duration: 3s;
-    animation-delay: 0.9s;
+    animation-delay: 0.8s;
     animation-timing-function: ease;
 }
 
@@ -56,6 +55,7 @@
 @keyframes death {
     0% {
         opacity: 1;
+        filter: brightness(5000%);
     }
 
     50% {
@@ -63,6 +63,7 @@
     }
 
     100% {
+        filter: brightness(0%);
         opacity: 0;
     }
 }
@@ -74,10 +75,10 @@
     }
 
     50% {
-        transform: translateX(450px);
+        transform: translateY(300px);
     }
 
     100% {
-        transform: translateX(0);
+        transform: translateY(0);
     }
 }
