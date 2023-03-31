@@ -10,6 +10,16 @@
     padding: 50px;
 }
 
+.hero {
+    height: 200px;
+    width: 150px;
+    border-radius: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
 .hit-marker {
     opacity: 0;
     top: -150px;
@@ -17,28 +27,21 @@
 }
 
 .ghost:hover~.spider-man .hit-marker {
-    animation-name: born;
-    animation-duration: 1s;
-    animation-delay: 0.9s;
-    animation-timing-function: ease;
+    animation: born 1.5s 0.5s ease;
 }
 
 .ghost:hover {
-    animation-name: atack;
-    animation-duration: 2s;
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
+    animation: attack 2s forwards ease;
     z-index: 1;
 }
 
-.ghost:hover~.spider-man {
-    animation: rotate-right 1s 1;
-    animation-delay: 0.9s;
+.ghost:hover~.spider-man .spider-man-image {
     animation-name: death;
-    animation-duration: 1s;
-    animation-delay: 1.5s;
+    animation-duration: 3s;
+    animation-delay: 0.9s;
     animation-timing-function: ease;
 }
+
 
 @keyframes born {
     0% {
@@ -55,18 +58,17 @@
         opacity: 1;
     }
 
+    50% {
+        transform: rotate(15deg);
+    }
+
     100% {
         opacity: 0;
     }
 }
 
-@keyframes rotate-right {
-    100% {
-        transform: rotate(15deg);
-    }
-}
 
-@keyframes atack {
+@keyframes attack {
     25% {
         transform: rotate(15deg);
     }
@@ -78,26 +80,4 @@
     100% {
         transform: translateX(0);
     }
-
-}
-
-.hero {
-    height: 200px;
-    width: 150px;
-    border-radius: 30%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-.helthpoint {
-    width: 100px;
-    height: auto;
-    border-radius: 5%;
-    border: 2px solid black;
-    background-color: red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
