@@ -10,6 +10,77 @@
     padding: 50px;
 }
 
+.hit-marker {
+    opacity: 0;
+    top: -150px;
+    position: relative;
+}
+
+.ghost:hover~.spider-man .hit-marker {
+    animation-name: born;
+    animation-duration: 1s;
+    animation-delay: 0.9s;
+    animation-timing-function: ease;
+}
+
+.ghost:hover {
+    animation-name: atack;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    z-index: 1;
+}
+
+.ghost:hover~.spider-man {
+    animation: rotate-right 1s 1;
+    animation-delay: 0.9s;
+    animation-name: death;
+    animation-duration: 1s;
+    animation-delay: 1.5s;
+    animation-timing-function: ease;
+}
+
+@keyframes born {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes death {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes rotate-right {
+    100% {
+        transform: rotate(15deg);
+    }
+}
+
+@keyframes atack {
+    25% {
+        transform: rotate(15deg);
+    }
+
+    50% {
+        transform: translateX(450px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+
+}
+
 .hero {
     height: 200px;
     width: 150px;
