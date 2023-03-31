@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JS Vite Template</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/js/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="src/css/style.css">
+  <title>Test case - character hit animation</title>
+</head>
+
+<body>
+  <section class="arena">
+    <div class="ghost hero">
+      <div class="helthpoint"><span class="healpoint-value">100</span></div>
+      <img class="hero-image" src="src/images/heroes/ghost.png" alt="ghost" width="150px" height="150px">
+    </div>
+    <div class="spider-man hero">
+      <div class="helthpoint">100</div>
+      <img class="hero-image" src="src/images/heroes/spider-man.png" alt="spider-man" width="150px" height="150px">
+    </div>
+  </section>
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+
 </html>
