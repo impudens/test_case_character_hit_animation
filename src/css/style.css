@@ -21,7 +21,8 @@
 
 .hit-marker {
     opacity: 0;
-    top: -110px;
+    top: -150px;
+    transform: rotate(45deg);
     position: relative;
 }
 
@@ -30,14 +31,14 @@
 }
 
 .ghost:hover {
-    animation: attack 2s forwards ease;
+    animation: attack 2s forwards ease-in-out;
     z-index: 1;
 }
 
 .ghost:hover~.spider-man .spider-man-image {
     animation-name: death;
     animation-duration: 3s;
-    animation-delay: 0.8s;
+    animation-delay: 0.9s;
     animation-timing-function: ease;
 }
 
@@ -55,7 +56,7 @@
 @keyframes death {
     0% {
         opacity: 1;
-        filter: brightness(5000%);
+        filter: brightness(5000);
     }
 
     50% {
@@ -70,15 +71,19 @@
 
 
 @keyframes attack {
-    25% {
+    15% {
         transform: rotate(15deg);
     }
 
+    35% {
+        transform: translateX(50%) translateY(50%);
+    }
+
     50% {
-        transform: translateY(300px);
+        transform: translateX(0px) translateY(300px);
     }
 
     100% {
-        transform: translateY(0);
+        transform: translateX(0px) translateY(0);
     }
 }
